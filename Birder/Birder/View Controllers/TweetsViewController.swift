@@ -19,8 +19,7 @@ class TweetsViewController: UIViewController {
             self.tweets = tweets
             for tweet in tweets! {
                 println("tweet: \(tweet.text) created: \(tweet.createdAt)")
-            }
-            
+            }            
         })
     }
 
