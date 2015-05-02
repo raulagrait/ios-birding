@@ -52,6 +52,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                     success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
                         if let dictionary = responseObject as? NSDictionary {
                             var user = User(dictionary: dictionary)
+                            User.currentUser = user
                             println("current user: \(user.name)")
                             self.loginCompletion?(user: user, error: nil)
                         }

@@ -8,7 +8,32 @@
 
 import UIKit
 
+var currentUserKey = "kCurrentUserKey"
+var _currentUser: User?
+
 class User: NSObject {
+    
+    class var currentUser: User? {
+        get {
+            if _currentUser == nil {
+                if let data = NSUserDefaults.standardUserDefaults().objectForKey(currentUserKey) as? NSData,
+                   let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
+                    _currentUser = User(dictionary: dictionary)
+                }
+            }
+            return _currentUser
+        }
+        set(user) {
+            _currentUser = user
+            var data: NSData? = nil
+            
+            if let user = user {
+                data = NSJSONSerialization.dataWithJSONObject(user.dictionary, options: nil, error: nil)
+            }
+            NSUserDefaults.standardUserDefaults().setObject(data, forKey: currentUserKey)
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
     
     var name: String?
     var screenName: String?
@@ -24,5 +49,4 @@ class User: NSObject {
         profileImageUrlString = dictionary["profile_image_url"] as? String
         tagline = dictionary["description" ] as? String  
     }
-    
 }

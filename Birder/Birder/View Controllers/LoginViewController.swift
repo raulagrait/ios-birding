@@ -25,15 +25,11 @@ class LoginViewController: UIViewController {
         
         TwitterClient.sharedInstance.loginWithCompletion { (user: User?, error: NSError?) -> Void in
             if let user = user {
-                // Modally present tweets view
-                println("Welcome to \(user.name)")
+                self.performSegueWithIdentifier("loginSegue", sender: self)
             } else {
                 // Present error
             }
         }
-        
-        
-
     }
 
     /*
