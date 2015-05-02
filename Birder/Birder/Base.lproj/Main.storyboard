@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="237.33333333333334" y="403.27999999999997"/>
         </scene>
-        <!--View Controller-->
+        <!--Tweets View Controller-->
         <scene sceneID="0k9-WN-TaI">
             <objects>
-                <viewController id="T4k-aj-0ml" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetsViewController" id="T4k-aj-0ml" customClass="TweetsViewController" customModule="Birder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yxh-3G-y0S"/>
                         <viewControllerLayoutGuide type="bottom" id="GQU-tC-eU2"/>
@@ -47,6 +47,17 @@
                     <view key="view" contentMode="scaleToFill" id="VMQ-sA-bdx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtG-Hg-W1x">
+                                <rect key="frame" x="129" y="77" width="49" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLogout:" destination="T4k-aj-0ml" eventType="touchUpInside" id="5G8-d4-2dU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

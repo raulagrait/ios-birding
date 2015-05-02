@@ -1,17 +1,27 @@
 //
-//  LoginViewController.swift
+//  TweetsViewController.swift
 //  Birder
 //
-//  Created by Raul Agrait on 4/30/15.
+//  Created by Raul Agrait on 5/2/15.
 //  Copyright (c) 2015 rateva. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class TweetsViewController: UIViewController {
 
+    var tweets: [Tweet]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
+            self.tweets = tweets
+            for tweet in tweets! {
+                println("tweet: \(tweet.text) created: \(tweet.createdAt)")
+            }
+            
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -19,15 +29,8 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onLogin(sender: AnyObject) {
-        
-        TwitterClient.sharedInstance.loginWithCompletion { (user: User?, error: NSError?) -> Void in
-            if let user = user {
-                self.performSegueWithIdentifier("loginSegue", sender: self)
-            } else {
-                // Present error
-            }
-        }
+    @IBAction func onLogout(sender: AnyObject) {
+        User.currentUser?.logout()
     }
 
     /*
