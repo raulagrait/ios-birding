@@ -14,6 +14,8 @@
 		55D143261AF3277700BD4A23 /* BirderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D143251AF3277700BD4A23 /* BirderTests.swift */; };
 		55D143341AF329B700BD4A23 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D143331AF329B700BD4A23 /* LoginViewController.swift */; };
 		55D143361AF32A6500BD4A23 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D143351AF32A6500BD4A23 /* TwitterClient.swift */; };
+		55D143391AF4A4DA00BD4A23 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D143381AF4A4DA00BD4A23 /* Tweet.swift */; };
+		55D1433B1AF4A4E400BD4A23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1433A1AF4A4E400BD4A23 /* User.swift */; };
 		A5FD0031DBD6249302D85224 /* libPods-Birder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB93ABD854BC93E70D92A37 /* libPods-Birder.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		55D1432F1AF328E900BD4A23 /* Birder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Birder-Bridging-Header.h"; sourceTree = "<group>"; };
 		55D143331AF329B700BD4A23 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		55D143351AF32A6500BD4A23 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		55D143381AF4A4DA00BD4A23 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		55D1433A1AF4A4E400BD4A23 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		79BF55B317EA70D5AA0F6E43 /* Pods-Birder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Birder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Birder/Pods-Birder.release.xcconfig"; sourceTree = "<group>"; };
 		8B8D461EDBD1D60C83A1DC50 /* Pods-Birder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Birder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Birder/Pods-Birder.debug.xcconfig"; sourceTree = "<group>"; };
 		CBB93ABD854BC93E70D92A37 /* libPods-Birder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Birder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,9 +105,10 @@
 				55D143161AF3277700BD4A23 /* Images.xcassets */,
 				55D143181AF3277700BD4A23 /* LaunchScreen.xib */,
 				55D143131AF3277700BD4A23 /* Main.storyboard */,
+				55D143371AF4A49600BD4A23 /* Models */,
 				55D1430D1AF3277700BD4A23 /* Supporting Files */,
-				55D143321AF3296B00BD4A23 /* View Controllers */,
 				55D143351AF32A6500BD4A23 /* TwitterClient.swift */,
+				55D143321AF3296B00BD4A23 /* View Controllers */,
 			);
 			path = Birder;
 			sourceTree = "<group>";
@@ -139,6 +144,15 @@
 				55D143331AF329B700BD4A23 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		55D143371AF4A49600BD4A23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55D143381AF4A4DA00BD4A23 /* Tweet.swift */,
+				55D1433A1AF4A4E400BD4A23 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EC65F0699D6861604A883BC0 /* Frameworks */ = {
@@ -287,6 +301,8 @@
 				55D143341AF329B700BD4A23 /* LoginViewController.swift in Sources */,
 				55D143361AF32A6500BD4A23 /* TwitterClient.swift in Sources */,
 				55D143101AF3277700BD4A23 /* AppDelegate.swift in Sources */,
+				55D1433B1AF4A4E400BD4A23 /* User.swift in Sources */,
+				55D143391AF4A4DA00BD4A23 /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
