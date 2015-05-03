@@ -14,29 +14,51 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
     
+    var refreshControl: UIRefreshControl!
+    
+    // MARK: - UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        initTableView()
+        initRefreshControl()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 120
- 
-        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
-            self.tweets = tweets
-            self.tableView.reloadData()
-        })
-    }
-
-    @IBAction func onLogout(sender: AnyObject) {
-         User.currentUser?.logout()
+        load()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Init
+    
+    func initTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
+    }
+    
+    func initRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
+    }
+    
+    // MARK: - Event handlers
+
+    @IBAction func onLogout(sender: AnyObject) {
+         User.currentUser?.logout()
+    }
+    
+    func onRefresh() {
+        load(callback: onRefreshDone)
+    }
+    
+    // MARK: - UITableViewDataSource & UITableViewDelegate
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //var cell = TweetCell()
@@ -64,6 +86,22 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return tweets.count
         }
         return 0
+    }
+    
+    // MARK: - Internal
+    
+    func onRefreshDone() {
+        refreshControl.endRefreshing()
+    }
+    
+    func load(callback: (() -> Void) = {}) {
+        
+        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
+            self.tweets = tweets
+            self.tableView.reloadData()
+            
+            callback()
+        })
     }
 
     /*
