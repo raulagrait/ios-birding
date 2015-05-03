@@ -48,24 +48,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8N2-6p-1tI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="228" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8N2-6p-1tI">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="106" id="jWN-m0-ooc" customClass="TweetCell" customModule="Birder" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="228" id="jWN-m0-ooc" customClass="TweetCell" customModule="Birder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jWN-m0-ooc" id="rXS-oP-uRD">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-WC-4Cg">
-                                                    <rect key="frame" x="81" y="8" width="53" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Morrissey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-WC-4Cg">
+                                                    <rect key="frame" x="81" y="8" width="78" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Some boring tweet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fem-VE-VtZ">
-                                                    <rect key="frame" x="81" y="30" width="146" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I decree today that life is simply taking and not giving. England is mine and it owes me a living." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fem-VE-VtZ">
+                                                    <rect key="frame" x="81" y="34" width="231" height="82"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -83,8 +83,8 @@
                                                     <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="@screenName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-pS-rIU">
-                                                    <rect key="frame" x="142" y="8" width="145" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="@screenName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-pS-rIU">
+                                                    <rect key="frame" x="162" y="10" width="99" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -92,14 +92,20 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zI1-H7-0c8" firstAttribute="leading" secondItem="rXS-oP-uRD" secondAttribute="leading" constant="8" id="045-Wf-S9H"/>
-                                                <constraint firstItem="QMV-pS-rIU" firstAttribute="top" secondItem="rXS-oP-uRD" secondAttribute="top" constant="8" id="0Dk-hP-0JQ"/>
+                                                <constraint firstItem="Fem-VE-VtZ" firstAttribute="leading" secondItem="zI1-H7-0c8" secondAttribute="trailing" constant="8" id="8wF-lt-c9P"/>
+                                                <constraint firstItem="uHF-SX-jSs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QMV-pS-rIU" secondAttribute="trailing" constant="3" id="AEh-Z3-P8H"/>
+                                                <constraint firstItem="Fem-VE-VtZ" firstAttribute="leading" secondItem="cqP-WC-4Cg" secondAttribute="leading" id="D3E-PU-nrE"/>
                                                 <constraint firstAttribute="trailing" secondItem="uHF-SX-jSs" secondAttribute="trailing" constant="8" id="Hdk-Kg-Fws"/>
-                                                <constraint firstItem="uHF-SX-jSs" firstAttribute="leading" secondItem="QMV-pS-rIU" secondAttribute="trailing" constant="8" id="ISO-Y4-ogC"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fem-VE-VtZ" secondAttribute="trailing" constant="8" id="LJ3-Rx-sRE"/>
+                                                <constraint firstItem="QMV-pS-rIU" firstAttribute="leading" secondItem="cqP-WC-4Cg" secondAttribute="trailing" constant="3" id="Mqe-8e-hdO"/>
                                                 <constraint firstItem="cqP-WC-4Cg" firstAttribute="leading" secondItem="zI1-H7-0c8" secondAttribute="trailing" constant="8" id="Smg-sM-7D5"/>
                                                 <constraint firstItem="cqP-WC-4Cg" firstAttribute="top" secondItem="rXS-oP-uRD" secondAttribute="top" constant="8" id="Tm1-bm-f3I"/>
-                                                <constraint firstItem="QMV-pS-rIU" firstAttribute="centerY" secondItem="cqP-WC-4Cg" secondAttribute="centerY" id="hpn-vN-MWy"/>
+                                                <constraint firstItem="Fem-VE-VtZ" firstAttribute="top" secondItem="QMV-pS-rIU" secondAttribute="bottom" constant="5" id="iug-bX-MyB"/>
                                                 <constraint firstItem="uHF-SX-jSs" firstAttribute="top" secondItem="rXS-oP-uRD" secondAttribute="top" constant="10" id="mb0-pO-APG"/>
-                                                <constraint firstItem="QMV-pS-rIU" firstAttribute="leading" secondItem="cqP-WC-4Cg" secondAttribute="trailing" constant="8" id="sWv-yE-hcI"/>
+                                                <constraint firstItem="Fem-VE-VtZ" firstAttribute="top" secondItem="uHF-SX-jSs" secondAttribute="bottom" constant="6" id="ohU-ju-14h"/>
+                                                <constraint firstItem="Fem-VE-VtZ" firstAttribute="top" secondItem="cqP-WC-4Cg" secondAttribute="bottom" constant="5" id="sIr-fu-x8e"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fem-VE-VtZ" secondAttribute="bottom" constant="8" id="uyQ-Gk-MSk"/>
+                                                <constraint firstItem="QMV-pS-rIU" firstAttribute="top" secondItem="rXS-oP-uRD" secondAttribute="top" constant="10" id="xLQ-YN-RDc"/>
                                                 <constraint firstItem="zI1-H7-0c8" firstAttribute="top" secondItem="rXS-oP-uRD" secondAttribute="top" constant="8" id="yuR-e5-s6w"/>
                                             </constraints>
                                         </tableViewCellContentView>

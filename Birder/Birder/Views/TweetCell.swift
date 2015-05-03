@@ -20,11 +20,24 @@ class TweetCell: UITableViewCell {
         super.awakeFromNib()
         userImageView.layer.cornerRadius = 3
         userImageView.clipsToBounds = true
+        
+        self.contentView.layoutIfNeeded()
+        updatePreferredMaxLayoutWidths()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.contentView.layoutIfNeeded()
+        updatePreferredMaxLayoutWidths()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updatePreferredMaxLayoutWidths() {
+        tweetTextLabel.preferredMaxLayoutWidth = tweetTextLabel.frame.size.width
     }
 }
