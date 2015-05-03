@@ -12,10 +12,12 @@ class TweetCell: UITableViewCell {
 
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        userImageView.layer.cornerRadius = 3
+        userImageView.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -23,5 +25,4 @@ class TweetCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

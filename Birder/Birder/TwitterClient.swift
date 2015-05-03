@@ -42,8 +42,8 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
 
         GET("1.1/statuses/home_timeline.json", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) -> Void in
-            
-            var tweets = Tweet.tweetsWithArray(responseObject as! [NSDictionary])
+
+            var tweets = Tweet.tweetsWithArray(responseObject as! [NSDictionary])            
             completion(tweets: tweets, error: nil)
 
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in

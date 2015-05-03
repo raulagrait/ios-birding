@@ -39,10 +39,16 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //var cell = TweetCell()
         var cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         
-        var tweetModel = tweets?[indexPath.row]
-        cell.userLabel.text = tweetModel?.user?.name
-        cell.tweetTextLabel.text = tweetModel?.text
+        if let tweets = tweets {
+            var tweetModel = tweets[indexPath.row]
+            cell.tweetTextLabel.text = tweetModel.text
         
+            if let user = tweetModel.user {
+                cell.userLabel.text = user.name
+                let userUrl = NSURL(string: user.profileImageUrlString!)
+                cell.userImageView.setImageWithURL(userUrl)
+            }
+        }
         
         return cell
     }
