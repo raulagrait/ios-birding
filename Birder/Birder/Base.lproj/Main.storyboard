@@ -111,7 +111,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="screenNameLabel" destination="QMV-pS-rIU" id="cSf-zH-HwU"/>
-                                            <outlet property="textLabel" destination="Fem-VE-VtZ" id="RzX-bL-Ojs"/>
                                             <outlet property="timeLabel" destination="uHF-SX-jSs" id="wgQ-qG-5Rs"/>
                                             <outlet property="tweetTextLabel" destination="Fem-VE-VtZ" id="ML2-gz-996"/>
                                             <outlet property="userImageView" destination="zI1-H7-0c8" id="dZg-sT-FV6"/>
@@ -160,7 +159,33 @@
                     <view key="view" contentMode="scaleToFill" id="0Is-Pt-KjD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6AO-fa-Dv0">
+                                <rect key="frame" x="6" y="72" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="9AY-MX-KQC"/>
+                                    <constraint firstAttribute="height" constant="65" id="pxU-Xa-Uoh"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdM-4L-Hco">
+                                <rect key="frame" x="6" y="145" width="308" height="415"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RdM-4L-Hco" firstAttribute="top" secondItem="6AO-fa-Dv0" secondAttribute="bottom" constant="8" id="0s0-LA-7MU"/>
+                            <constraint firstItem="RdM-4L-Hco" firstAttribute="leading" secondItem="0Is-Pt-KjD" secondAttribute="leading" constant="6" id="7cP-ag-Skz"/>
+                            <constraint firstItem="RdM-4L-Hco" firstAttribute="leading" secondItem="0Is-Pt-KjD" secondAttribute="leading" constant="6" id="Ibj-aN-Udj"/>
+                            <constraint firstAttribute="trailing" secondItem="RdM-4L-Hco" secondAttribute="trailing" constant="6" id="agB-J3-2Kc"/>
+                            <constraint firstItem="RdM-4L-Hco" firstAttribute="top" secondItem="6AO-fa-Dv0" secondAttribute="bottom" constant="8" id="hUs-6p-HWa"/>
+                            <constraint firstItem="6AO-fa-Dv0" firstAttribute="top" secondItem="Irr-Yi-8Cv" secondAttribute="bottom" constant="8" id="mBj-GE-R5s"/>
+                            <constraint firstItem="hL3-2y-Yt3" firstAttribute="top" secondItem="RdM-4L-Hco" secondAttribute="bottom" constant="8" id="nuq-Ii-jlb"/>
+                            <constraint firstItem="6AO-fa-Dv0" firstAttribute="leading" secondItem="0Is-Pt-KjD" secondAttribute="leading" constant="6" id="uTx-CJ-ZyT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FLp-kD-ruK">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="EsT-KF-25e">
@@ -174,6 +199,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tweetTextView" destination="RdM-4L-Hco" id="pmp-Hv-NQm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIm-6M-Yug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

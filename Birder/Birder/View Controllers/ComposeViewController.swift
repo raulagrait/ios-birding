@@ -10,6 +10,9 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var tweetTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
