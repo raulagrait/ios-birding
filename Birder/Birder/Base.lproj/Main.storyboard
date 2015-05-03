@@ -130,9 +130,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tweets" id="k7I-bP-jFE">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="jjJ-rm-Qha">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="jjJ-rm-Qha">
                             <connections>
                                 <action selector="onLogout:" destination="T4k-aj-0ml" id="YLi-2K-U1g"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New" id="RtK-da-2dq">
+                            <connections>
+                                <segue destination="JxP-pi-pFo" kind="modal" id="9eb-5c-Ehr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,6 +148,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7y-e8-2gs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1142" y="403"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="ioI-sl-tqj">
+            <objects>
+                <viewController id="9ZT-Nq-kjb" customClass="ComposeViewController" customModule="Birder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Irr-Yi-8Cv"/>
+                        <viewControllerLayoutGuide type="bottom" id="hL3-2y-Yt3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Is-Pt-KjD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FLp-kD-ruK">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="EsT-KF-25e">
+                            <connections>
+                                <action selector="onCancelTouched:" destination="9ZT-Nq-kjb" id="lxj-JX-aKv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="seN-pK-vi0">
+                            <connections>
+                                <action selector="onTweet:" destination="9ZT-Nq-kjb" id="1nQ-pF-nlV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KIm-6M-Yug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2068" y="406"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qmL-UY-kE2">
@@ -161,6 +196,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mES-8J-NKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="610" y="403"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dDV-vo-qFI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JxP-pi-pFo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpY-z1-YNz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9ZT-Nq-kjb" kind="relationship" relationship="rootViewController" id="CVF-i8-kdB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spc-l8-jUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1536" y="406"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
