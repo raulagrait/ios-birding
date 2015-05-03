@@ -42,9 +42,12 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let tweets = tweets {
             var tweetModel = tweets[indexPath.row]
             cell.tweetTextLabel.text = tweetModel.text
+            cell.timeLabel.text = tweetModel.dateShortForm
         
             if let user = tweetModel.user {
                 cell.userLabel.text = user.name
+                cell.screenNameLabel.text = "@" + user.screenName!
+                
                 let userUrl = NSURL(string: user.profileImageUrlString!)
                 cell.userImageView.setImageWithURL(userUrl)
             }

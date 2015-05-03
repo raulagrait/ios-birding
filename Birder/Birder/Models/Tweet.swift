@@ -14,7 +14,7 @@ class Tweet: NSObject {
     var createdAtString: String?
     var createdAt: NSDate?
     var user: User?
- 
+    
     init(dictionary: NSDictionary) {
         
         let userDictionary = dictionary["user"] as! NSDictionary
@@ -26,6 +26,24 @@ class Tweet: NSObject {
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEE MMM d HH:mm:ss Z y "
         createdAt = dateFormatter.dateFromString(createdAtString!)
+    }
+    
+    var dateShortForm: String {
+        get {
+            if let difference = createdAt?.timeIntervalSinceNow {
+                var secondsDifference = (difference as Double) * -1.0
+                if secondsDifference < 60 * 60 {
+                    let minutes = Int(secondsDifference / 60.0)
+                    return "\(minutes)m"
+                } else if secondsDifference < 60 * 60 * 24 {
+                    let hours = Int(secondsDifference / 60 / 24)
+                    return "\(hours)h"
+                }
+            }
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            return dateFormatter.stringFromDate(createdAt!)
+        }
     }
     
     class func tweetsWithArray(array: [NSDictionary]) -> [Tweet] {
