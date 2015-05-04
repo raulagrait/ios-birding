@@ -308,19 +308,57 @@
                                 <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KX-w0-zg0">
+                                <rect key="frame" x="6" y="220" width="16" height="22"/>
+                                <state key="normal" image="reply.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onReply:" destination="dxc-0q-eis" eventType="touchUpInside" id="bKT-UP-GEk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKp-Er-ort">
+                                <rect key="frame" x="58" y="220" width="19" height="22"/>
+                                <state key="normal" image="retweet.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="retweet_on.png"/>
+                                <connections>
+                                    <action selector="onRetweet:" destination="dxc-0q-eis" eventType="touchUpInside" id="sxa-mF-IOL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdA-oe-vLh">
+                                <rect key="frame" x="110" y="220" width="16" height="22"/>
+                                <state key="normal" image="favorite.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="favorite_on.png"/>
+                                <connections>
+                                    <action selector="onFavorite:" destination="dxc-0q-eis" eventType="touchUpInside" id="h7d-7g-vcH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="OKp-Er-ort" firstAttribute="leading" secondItem="4KX-w0-zg0" secondAttribute="trailing" constant="36" id="2k6-Xa-JAD"/>
                             <constraint firstItem="lcr-U9-orI" firstAttribute="leading" secondItem="aHK-wK-s4P" secondAttribute="trailing" constant="8" id="FsD-ax-rbk"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lcr-U9-orI" secondAttribute="trailing" constant="8" id="JUp-uC-dD6"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xdA-oe-vLh" secondAttribute="trailing" constant="6" id="JeV-8p-CtE"/>
                             <constraint firstItem="xFt-5c-54n" firstAttribute="leading" secondItem="4Nf-hX-281" secondAttribute="leading" constant="6" id="NeF-L3-9Bm"/>
                             <constraint firstItem="lcr-U9-orI" firstAttribute="top" secondItem="8Y8-r8-Nv3" secondAttribute="bottom" id="QIU-9d-eet"/>
                             <constraint firstItem="xFt-5c-54n" firstAttribute="top" secondItem="aHK-wK-s4P" secondAttribute="bottom" constant="8" id="Qah-gb-Jgi"/>
+                            <constraint firstItem="OKp-Er-ort" firstAttribute="leading" secondItem="4KX-w0-zg0" secondAttribute="trailing" constant="36" id="Rhh-PZ-4X7"/>
+                            <constraint firstItem="xdA-oe-vLh" firstAttribute="top" secondItem="upb-rE-3X8" secondAttribute="bottom" constant="8" id="RuJ-CN-oKc"/>
+                            <constraint firstItem="OKp-Er-ort" firstAttribute="top" secondItem="upb-rE-3X8" secondAttribute="bottom" constant="8" id="Tru-ob-awa"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Y8-r8-Nv3" secondAttribute="trailing" constant="8" id="WO8-Wg-f0d"/>
                             <constraint firstItem="upb-rE-3X8" firstAttribute="top" secondItem="xFt-5c-54n" secondAttribute="bottom" constant="8" id="WeG-me-UcV"/>
+                            <constraint firstItem="xdA-oe-vLh" firstAttribute="leading" secondItem="OKp-Er-ort" secondAttribute="trailing" constant="33" id="dWN-wF-wj5"/>
                             <constraint firstItem="aHK-wK-s4P" firstAttribute="leading" secondItem="4Nf-hX-281" secondAttribute="leading" constant="6" id="dwA-cn-z1b"/>
+                            <constraint firstItem="xdA-oe-vLh" firstAttribute="leading" secondItem="OKp-Er-ort" secondAttribute="trailing" constant="33" id="eh3-Bf-PFs"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xFt-5c-54n" secondAttribute="trailing" constant="6" id="f3f-vU-XJt"/>
                             <constraint firstItem="upb-rE-3X8" firstAttribute="leading" secondItem="4Nf-hX-281" secondAttribute="leading" constant="6" id="fme-w5-hGf"/>
+                            <constraint firstItem="4KX-w0-zg0" firstAttribute="top" secondItem="upb-rE-3X8" secondAttribute="bottom" constant="8" id="nLs-TH-Dep"/>
+                            <constraint firstItem="4KX-w0-zg0" firstAttribute="leading" secondItem="4Nf-hX-281" secondAttribute="leading" constant="6" id="nwH-dQ-GKf"/>
                             <constraint firstItem="aHK-wK-s4P" firstAttribute="top" secondItem="Yq3-eS-yMU" secondAttribute="bottom" constant="8" id="p8l-c7-cXR"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="upb-rE-3X8" secondAttribute="trailing" constant="6" id="pXy-JC-gIL"/>
                             <constraint firstItem="8Y8-r8-Nv3" firstAttribute="top" secondItem="Yq3-eS-yMU" secondAttribute="bottom" constant="16" id="ttz-hc-23O"/>
@@ -330,7 +368,10 @@
                     <navigationItem key="navigationItem" title="Tweet" id="4B3-sg-Wek"/>
                     <connections>
                         <outlet property="createdAtLabel" destination="upb-rE-3X8" id="uet-Jv-tsj"/>
+                        <outlet property="favoriteButton" destination="xdA-oe-vLh" id="3nl-2Y-zE4"/>
                         <outlet property="nameLabel" destination="8Y8-r8-Nv3" id="XIK-av-Dgh"/>
+                        <outlet property="replyButton" destination="4KX-w0-zg0" id="odM-sE-JTc"/>
+                        <outlet property="retweetButton" destination="OKp-Er-ort" id="P1o-Z6-Ksi"/>
                         <outlet property="screenNameLabel" destination="lcr-U9-orI" id="iEk-SR-fx9"/>
                         <outlet property="tweetLabel" destination="xFt-5c-54n" id="YVd-6K-w4b"/>
                         <outlet property="userImageView" destination="aHK-wK-s4P" id="Jey-vN-odB"/>
@@ -341,6 +382,13 @@
             <point key="canvasLocation" x="1550" y="1074"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorite.png" width="16" height="16"/>
+        <image name="favorite_on.png" width="16" height="16"/>
+        <image name="reply.png" width="16" height="16"/>
+        <image name="retweet.png" width="19" height="16"/>
+        <image name="retweet_on.png" width="19" height="16"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

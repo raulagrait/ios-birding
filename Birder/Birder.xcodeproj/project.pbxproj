@@ -20,6 +20,11 @@
 		55D143401AF59C8E00BD4A23 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1433F1AF59C8E00BD4A23 /* TweetCell.swift */; };
 		55D143421AF67E2F00BD4A23 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D143411AF67E2F00BD4A23 /* ComposeViewController.swift */; };
 		55D143441AF6FD7E00BD4A23 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D143431AF6FD7E00BD4A23 /* TweetViewController.swift */; };
+		55D143551AF710D400BD4A23 /* retweet_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D143501AF710D400BD4A23 /* retweet_on.png */; };
+		55D143561AF710D400BD4A23 /* retweet.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D143511AF710D400BD4A23 /* retweet.png */; };
+		55D143571AF710D400BD4A23 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D143521AF710D400BD4A23 /* reply.png */; };
+		55D143581AF710D400BD4A23 /* favorite_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D143531AF710D400BD4A23 /* favorite_on.png */; };
+		55D143591AF710D400BD4A23 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D143541AF710D400BD4A23 /* favorite.png */; };
 		A5FD0031DBD6249302D85224 /* libPods-Birder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB93ABD854BC93E70D92A37 /* libPods-Birder.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,11 @@
 		55D1433F1AF59C8E00BD4A23 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetCell.swift; path = Views/TweetCell.swift; sourceTree = "<group>"; };
 		55D143411AF67E2F00BD4A23 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		55D143431AF6FD7E00BD4A23 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		55D143501AF710D400BD4A23 /* retweet_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = retweet_on.png; path = Images/retweet_on.png; sourceTree = "<group>"; };
+		55D143511AF710D400BD4A23 /* retweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = retweet.png; path = Images/retweet.png; sourceTree = "<group>"; };
+		55D143521AF710D400BD4A23 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reply.png; path = Images/reply.png; sourceTree = "<group>"; };
+		55D143531AF710D400BD4A23 /* favorite_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favorite_on.png; path = Images/favorite_on.png; sourceTree = "<group>"; };
+		55D143541AF710D400BD4A23 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favorite.png; path = Images/favorite.png; sourceTree = "<group>"; };
 		79BF55B317EA70D5AA0F6E43 /* Pods-Birder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Birder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Birder/Pods-Birder.release.xcconfig"; sourceTree = "<group>"; };
 		8B8D461EDBD1D60C83A1DC50 /* Pods-Birder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Birder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Birder/Pods-Birder.debug.xcconfig"; sourceTree = "<group>"; };
 		CBB93ABD854BC93E70D92A37 /* libPods-Birder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Birder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				55D1430F1AF3277700BD4A23 /* AppDelegate.swift */,
+				55D1434F1AF710C000BD4A23 /* Images */,
 				55D143161AF3277700BD4A23 /* Images.xcassets */,
 				55D143181AF3277700BD4A23 /* LaunchScreen.xib */,
 				55D143131AF3277700BD4A23 /* Main.storyboard */,
@@ -173,6 +184,18 @@
 				55D1433F1AF59C8E00BD4A23 /* TweetCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		55D1434F1AF710C000BD4A23 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				55D143501AF710D400BD4A23 /* retweet_on.png */,
+				55D143511AF710D400BD4A23 /* retweet.png */,
+				55D143521AF710D400BD4A23 /* reply.png */,
+				55D143531AF710D400BD4A23 /* favorite_on.png */,
+				55D143541AF710D400BD4A23 /* favorite.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		EC65F0699D6861604A883BC0 /* Frameworks */ = {
@@ -265,9 +288,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D143581AF710D400BD4A23 /* favorite_on.png in Resources */,
 				55D143151AF3277700BD4A23 /* Main.storyboard in Resources */,
+				55D143561AF710D400BD4A23 /* retweet.png in Resources */,
+				55D143551AF710D400BD4A23 /* retweet_on.png in Resources */,
 				55D1431A1AF3277700BD4A23 /* LaunchScreen.xib in Resources */,
+				55D143571AF710D400BD4A23 /* reply.png in Resources */,
 				55D143171AF3277700BD4A23 /* Images.xcassets in Resources */,
+				55D143591AF710D400BD4A23 /* favorite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

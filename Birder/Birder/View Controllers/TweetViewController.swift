@@ -18,6 +18,10 @@ class TweetViewController: UIViewController {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var createdAtLabel: UILabel!
     
+    @IBOutlet weak var replyButton: UIButton!
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +37,9 @@ class TweetViewController: UIViewController {
             var dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy hh:mm:ss a"
             createdAtLabel.text = dateFormatter.stringFromDate(tweet.createdAt!)
+            
+            favoriteButton.selected = tweet.favorited!
+            retweetButton.selected = tweet.retweeted!
         }
     }
 
@@ -41,7 +48,17 @@ class TweetViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onReply(sender: AnyObject) {
+    }
 
+    @IBAction func onRetweet(sender: AnyObject) {
+    }
+    
+    
+    @IBAction func onFavorite(sender: AnyObject) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
