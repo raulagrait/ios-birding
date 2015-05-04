@@ -8,6 +8,8 @@
 
 import UIKit
 
+let newTweetNotification = "newTweetNotification"
+
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tweets: [Tweet]?
@@ -20,6 +22,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onNewTweet:", name: newTweetNotification, object: nil)
         
         initTableView()
         initRefreshControl()
@@ -56,6 +60,13 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func onRefresh() {
         load(callback: onRefreshDone)
+    }
+    
+    func onNewTweet(notification: NSNotification) {
+        if let userInfo = notification.userInfo, tweet = userInfo["tweet"] as? Tweet {
+            tweets?.insert(tweet, atIndex: 0)
+            tableView.reloadData()
+        }
     }
     
     // MARK: - UITableViewDataSource & UITableViewDelegate
@@ -99,7 +110,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
             self.tweets = tweets
             self.tableView.reloadData()
-            
             callback()
         })
     }

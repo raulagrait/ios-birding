@@ -17,6 +17,8 @@ class ComposeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tweetTextView.text = ""
+        tweetTextView.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,11 +27,25 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func onCancelTouched(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        closeModal()
     }
     
     @IBAction func onTweet(sender: AnyObject) {
-        println("post the tweet")
+        var text = tweetTextView.text
+        TwitterClient.sharedInstance.postStatusUpdate(text, completion: { (tweet: Tweet?, error: NSError?) -> Void in
+            if error == nil {
+                var userInfo = [NSObject: AnyObject]()
+                userInfo["tweet"] = tweet
+                NSNotificationCenter.defaultCenter().postNotificationName(newTweetNotification, object: self, userInfo: userInfo)
+                self.closeModal()
+            } else {
+                // Show an alert or something
+            }
+        })
+    }
+    
+    func closeModal() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     /*
