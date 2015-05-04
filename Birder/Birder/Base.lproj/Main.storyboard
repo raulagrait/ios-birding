@@ -202,6 +202,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tweetTextView" destination="RdM-4L-Hco" id="pmp-Hv-NQm"/>
+                        <outlet property="userImageView" destination="6AO-fa-Dv0" id="ssb-cJ-9Ed"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIm-6M-Yug" userLabel="First Responder" sceneMemberID="firstResponder"/>

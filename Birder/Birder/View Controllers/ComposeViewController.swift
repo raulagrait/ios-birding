@@ -12,6 +12,7 @@ class ComposeViewController: UIViewController {
 
     @IBOutlet weak var tweetTextView: UITextView!
     
+    @IBOutlet weak var userImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,11 @@ class ComposeViewController: UIViewController {
         // Do any additional setup after loading the view.
         tweetTextView.text = ""
         tweetTextView.becomeFirstResponder()
+        
+        if let user = User.currentUser {
+            let url = NSURL(string: user.profileImageUrlString!)
+            userImageView.setImageWithURL(url)
+        }
     }
 
     override func didReceiveMemoryWarning() {
