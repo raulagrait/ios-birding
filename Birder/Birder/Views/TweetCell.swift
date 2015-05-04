@@ -20,7 +20,7 @@ class TweetCell: UITableViewCell {
         super.awakeFromNib()
         userImageView.layer.cornerRadius = 3
         userImageView.clipsToBounds = true
-        
+
         self.contentView.layoutIfNeeded()
         updatePreferredMaxLayoutWidths()
     }

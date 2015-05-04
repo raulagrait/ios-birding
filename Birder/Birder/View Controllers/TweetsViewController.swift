@@ -99,6 +99,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 0
     }
     
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     // MARK: - Internal
     
     func onRefreshDone() {
