@@ -12,9 +12,11 @@ class TweetViewController: UIViewController {
 
     var tweet: Tweet?
     
+    @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var createdAtLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,12 @@ class TweetViewController: UIViewController {
             
             nameLabel.text = user.name
             screenNameLabel.text = "@" + user.screenName!
+            
+            tweetLabel.text = tweet.text
+            
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy hh:mm:ss a"
+            createdAtLabel.text = dateFormatter.stringFromDate(tweet.createdAt!)
         }
     }
 

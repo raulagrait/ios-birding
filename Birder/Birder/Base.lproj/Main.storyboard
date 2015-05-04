@@ -36,7 +36,7 @@
             </objects>
             <point key="canvasLocation" x="237.33333333333334" y="403.27999999999997"/>
         </scene>
-        <!--Tweets-->
+        <!--Home-->
         <scene sceneID="0k9-WN-TaI">
             <objects>
                 <viewController storyboardIdentifier="TweetsViewController" id="T4k-aj-0ml" customClass="TweetsViewController" customModule="Birder" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,7 +130,7 @@
                             <constraint firstAttribute="trailing" secondItem="8N2-6p-1tI" secondAttribute="trailing" id="xF0-OY-vBm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tweets" id="k7I-bP-jFE">
+                    <navigationItem key="navigationItem" title="Home" id="k7I-bP-jFE">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="jjJ-rm-Qha">
                             <connections>
                                 <action selector="onLogout:" destination="T4k-aj-0ml" id="YLi-2K-U1g"/>
@@ -265,7 +265,7 @@
             </objects>
             <point key="canvasLocation" x="1536" y="406"/>
         </scene>
-        <!--Tweet View Controller-->
+        <!--Tweet-->
         <scene sceneID="jnB-2Z-JOj">
             <objects>
                 <viewController id="dxc-0q-eis" customClass="TweetViewController" customModule="Birder" customModuleProvider="target" sceneMemberID="viewController">
@@ -284,16 +284,28 @@
                                     <constraint firstAttribute="height" constant="65" id="Mln-dr-YJX"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morrissey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Y8-r8-Nv3">
+                                <rect key="frame" x="79" y="80" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@morrissey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcr-U9-orI">
                                 <rect key="frame" x="79" y="101" width="79" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morrissey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Y8-r8-Nv3">
-                                <rect key="frame" x="79" y="80" width="78" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A dreaded sunny day, so I meet you at the cemetry gates." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFt-5c-54n">
+                                <rect key="frame" x="6" y="145" width="299" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/14/15, 08:22 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upb-rE-3X8">
+                                <rect key="frame" x="6" y="194" width="136" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -301,18 +313,26 @@
                         <constraints>
                             <constraint firstItem="lcr-U9-orI" firstAttribute="leading" secondItem="aHK-wK-s4P" secondAttribute="trailing" constant="8" id="FsD-ax-rbk"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lcr-U9-orI" secondAttribute="trailing" constant="8" id="JUp-uC-dD6"/>
+                            <constraint firstItem="xFt-5c-54n" firstAttribute="leading" secondItem="4Nf-hX-281" secondAttribute="leading" constant="6" id="NeF-L3-9Bm"/>
                             <constraint firstItem="lcr-U9-orI" firstAttribute="top" secondItem="8Y8-r8-Nv3" secondAttribute="bottom" id="QIU-9d-eet"/>
+                            <constraint firstItem="xFt-5c-54n" firstAttribute="top" secondItem="aHK-wK-s4P" secondAttribute="bottom" constant="8" id="Qah-gb-Jgi"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Y8-r8-Nv3" secondAttribute="trailing" constant="8" id="WO8-Wg-f0d"/>
+                            <constraint firstItem="upb-rE-3X8" firstAttribute="top" secondItem="xFt-5c-54n" secondAttribute="bottom" constant="8" id="WeG-me-UcV"/>
                             <constraint firstItem="aHK-wK-s4P" firstAttribute="leading" secondItem="4Nf-hX-281" secondAttribute="leading" constant="6" id="dwA-cn-z1b"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xFt-5c-54n" secondAttribute="trailing" constant="6" id="f3f-vU-XJt"/>
+                            <constraint firstItem="upb-rE-3X8" firstAttribute="leading" secondItem="4Nf-hX-281" secondAttribute="leading" constant="6" id="fme-w5-hGf"/>
                             <constraint firstItem="aHK-wK-s4P" firstAttribute="top" secondItem="Yq3-eS-yMU" secondAttribute="bottom" constant="8" id="p8l-c7-cXR"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="upb-rE-3X8" secondAttribute="trailing" constant="6" id="pXy-JC-gIL"/>
                             <constraint firstItem="8Y8-r8-Nv3" firstAttribute="top" secondItem="Yq3-eS-yMU" secondAttribute="bottom" constant="16" id="ttz-hc-23O"/>
                             <constraint firstItem="8Y8-r8-Nv3" firstAttribute="leading" secondItem="aHK-wK-s4P" secondAttribute="trailing" constant="8" id="uua-tc-dJt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4B3-sg-Wek"/>
+                    <navigationItem key="navigationItem" title="Tweet" id="4B3-sg-Wek"/>
                     <connections>
+                        <outlet property="createdAtLabel" destination="upb-rE-3X8" id="uet-Jv-tsj"/>
                         <outlet property="nameLabel" destination="8Y8-r8-Nv3" id="XIK-av-Dgh"/>
                         <outlet property="screenNameLabel" destination="lcr-U9-orI" id="iEk-SR-fx9"/>
+                        <outlet property="tweetLabel" destination="xFt-5c-54n" id="YVd-6K-w4b"/>
                         <outlet property="userImageView" destination="aHK-wK-s4P" id="Jey-vN-odB"/>
                     </connections>
                 </viewController>
