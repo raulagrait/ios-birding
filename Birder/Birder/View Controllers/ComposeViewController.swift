@@ -13,6 +13,8 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var tweetTextView: UITextView!
     
     @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var screenNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,8 @@ class ComposeViewController: UIViewController {
         if let user = User.currentUser {
             let url = NSURL(string: user.profileImageUrlString!)
             userImageView.setImageWithURL(url)
+            nameLabel.text = user.name
+            screenNameLabel.text = "@" + user.screenName!
         }
     }
 

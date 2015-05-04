@@ -168,6 +168,18 @@
                                     <constraint firstAttribute="height" constant="65" id="pxU-Xa-Uoh"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morrissey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ah9-il-vsC">
+                                <rect key="frame" x="79" y="72" width="233" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@morrissey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tq8-E6-2Zg">
+                                <rect key="frame" x="79" y="92" width="233" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdM-4L-Hco">
                                 <rect key="frame" x="6" y="145" width="308" height="415"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,13 +191,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RdM-4L-Hco" firstAttribute="top" secondItem="6AO-fa-Dv0" secondAttribute="bottom" constant="8" id="0s0-LA-7MU"/>
+                            <constraint firstItem="Tq8-E6-2Zg" firstAttribute="leading" secondItem="6AO-fa-Dv0" secondAttribute="trailing" constant="8" id="1Wd-ur-u1F"/>
+                            <constraint firstItem="Tq8-E6-2Zg" firstAttribute="top" secondItem="Irr-Yi-8Cv" secondAttribute="bottom" constant="28" id="4B7-VW-u4H"/>
+                            <constraint firstAttribute="trailing" secondItem="Ah9-il-vsC" secondAttribute="trailing" constant="8" id="6u2-dE-wsz"/>
                             <constraint firstItem="RdM-4L-Hco" firstAttribute="leading" secondItem="0Is-Pt-KjD" secondAttribute="leading" constant="6" id="7cP-ag-Skz"/>
+                            <constraint firstItem="Ah9-il-vsC" firstAttribute="top" secondItem="Irr-Yi-8Cv" secondAttribute="bottom" constant="8" id="C5j-E4-YC5"/>
                             <constraint firstItem="RdM-4L-Hco" firstAttribute="leading" secondItem="0Is-Pt-KjD" secondAttribute="leading" constant="6" id="Ibj-aN-Udj"/>
+                            <constraint firstAttribute="trailing" secondItem="Tq8-E6-2Zg" secondAttribute="trailing" constant="8" id="Rva-jn-Pr6"/>
                             <constraint firstAttribute="trailing" secondItem="RdM-4L-Hco" secondAttribute="trailing" constant="6" id="agB-J3-2Kc"/>
                             <constraint firstItem="RdM-4L-Hco" firstAttribute="top" secondItem="6AO-fa-Dv0" secondAttribute="bottom" constant="8" id="hUs-6p-HWa"/>
                             <constraint firstItem="6AO-fa-Dv0" firstAttribute="top" secondItem="Irr-Yi-8Cv" secondAttribute="bottom" constant="8" id="mBj-GE-R5s"/>
                             <constraint firstItem="hL3-2y-Yt3" firstAttribute="top" secondItem="RdM-4L-Hco" secondAttribute="bottom" constant="8" id="nuq-Ii-jlb"/>
                             <constraint firstItem="6AO-fa-Dv0" firstAttribute="leading" secondItem="0Is-Pt-KjD" secondAttribute="leading" constant="6" id="uTx-CJ-ZyT"/>
+                            <constraint firstItem="Ah9-il-vsC" firstAttribute="leading" secondItem="6AO-fa-Dv0" secondAttribute="trailing" constant="8" id="uhb-TY-WIg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FLp-kD-ruK">
@@ -201,6 +219,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="nameLabel" destination="Ah9-il-vsC" id="C0h-4I-Evc"/>
+                        <outlet property="screenNameLabel" destination="Tq8-E6-2Zg" id="MVB-Nv-tUk"/>
                         <outlet property="tweetTextView" destination="RdM-4L-Hco" id="pmp-Hv-NQm"/>
                         <outlet property="userImageView" destination="6AO-fa-Dv0" id="ssb-cJ-9Ed"/>
                     </connections>
