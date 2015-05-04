@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="228" id="jWN-m0-ooc" customClass="TweetCell" customModule="Birder" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="228" id="jWN-m0-ooc" customClass="TweetCell" customModule="Birder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jWN-m0-ooc" id="rXS-oP-uRD">
@@ -64,7 +64,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I decree today that life is simply taking and not giving. England is mine and it owes me a living." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fem-VE-VtZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="I decree today that life is simply taking and not giving. England is mine and it owes me a living." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fem-VE-VtZ">
                                                     <rect key="frame" x="81" y="34" width="231" height="82"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -77,13 +77,13 @@
                                                         <constraint firstAttribute="width" constant="65" id="IOf-fc-oL2"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="3h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHF-SX-jSs">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" text="3h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHF-SX-jSs">
                                                     <rect key="frame" x="295" y="10" width="17" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="@screenName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-pS-rIU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" misplaced="YES" text="@screenName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-pS-rIU">
                                                     <rect key="frame" x="162" y="10" width="99" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,6 +116,7 @@
                                             <outlet property="tweetTextLabel" destination="Fem-VE-VtZ" id="ML2-gz-996"/>
                                             <outlet property="userImageView" destination="zI1-H7-0c8" id="dZg-sT-FV6"/>
                                             <outlet property="userLabel" destination="cqP-WC-4Cg" id="q8L-Qj-Vni"/>
+                                            <segue destination="dxc-0q-eis" kind="push" id="Ebo-Lh-xU7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -263,6 +264,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spc-l8-jUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1536" y="406"/>
+        </scene>
+        <!--Tweet View Controller-->
+        <scene sceneID="jnB-2Z-JOj">
+            <objects>
+                <viewController id="dxc-0q-eis" customClass="TweetViewController" customModule="Birder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yq3-eS-yMU"/>
+                        <viewControllerLayoutGuide type="bottom" id="fFR-xU-hKU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Nf-hX-281">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aHK-wK-s4P">
+                                <rect key="frame" x="6" y="72" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="8o9-TH-zev"/>
+                                    <constraint firstAttribute="height" constant="65" id="Mln-dr-YJX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@morrissey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcr-U9-orI">
+                                <rect key="frame" x="79" y="101" width="79" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morrissey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Y8-r8-Nv3">
+                                <rect key="frame" x="79" y="80" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lcr-U9-orI" firstAttribute="leading" secondItem="aHK-wK-s4P" secondAttribute="trailing" constant="8" id="FsD-ax-rbk"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lcr-U9-orI" secondAttribute="trailing" constant="8" id="JUp-uC-dD6"/>
+                            <constraint firstItem="lcr-U9-orI" firstAttribute="top" secondItem="8Y8-r8-Nv3" secondAttribute="bottom" id="QIU-9d-eet"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Y8-r8-Nv3" secondAttribute="trailing" constant="8" id="WO8-Wg-f0d"/>
+                            <constraint firstItem="aHK-wK-s4P" firstAttribute="leading" secondItem="4Nf-hX-281" secondAttribute="leading" constant="6" id="dwA-cn-z1b"/>
+                            <constraint firstItem="aHK-wK-s4P" firstAttribute="top" secondItem="Yq3-eS-yMU" secondAttribute="bottom" constant="8" id="p8l-c7-cXR"/>
+                            <constraint firstItem="8Y8-r8-Nv3" firstAttribute="top" secondItem="Yq3-eS-yMU" secondAttribute="bottom" constant="16" id="ttz-hc-23O"/>
+                            <constraint firstItem="8Y8-r8-Nv3" firstAttribute="leading" secondItem="aHK-wK-s4P" secondAttribute="trailing" constant="8" id="uua-tc-dJt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4B3-sg-Wek"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="8Y8-r8-Nv3" id="XIK-av-Dgh"/>
+                        <outlet property="screenNameLabel" destination="lcr-U9-orI" id="iEk-SR-fx9"/>
+                        <outlet property="userImageView" destination="aHK-wK-s4P" id="Jey-vN-odB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MI5-03-EAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550" y="1074"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
