@@ -57,8 +57,18 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     func postStatusUpdate(text: String, completion: (tweet: Tweet?, error: NSError?) -> Void) {
         var params = NSMutableDictionary()
         params["status"] = text
-        
-        POST("1.1/statuses/update.json", parameters: params,
+        postStatusUpdateWithParameters(params, completion: completion)
+    }
+    
+    func replyToTweet(tweet: Tweet, text: String, completion: (tweet: Tweet?, error: NSError?) -> Void) {
+        var params = NSMutableDictionary()
+        params["status"] = text
+        params["in_reply_to_status_id"] = NSNumber(longLong: tweet.id)
+        postStatusUpdateWithParameters(params, completion: completion)
+    }
+    
+    private func postStatusUpdateWithParameters(parameters: NSDictionary, completion: (tweet: Tweet?, error: NSError?) -> Void) {
+        POST("1.1/statuses/update.json", parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
                 
                 var tweet: Tweet? = nil
@@ -73,7 +83,6 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                 println("Error posting tweet")
                 completion(tweet: nil, error: error)
         })
-        
     }
     
     func changeFavoriteStatus(onTweet tweet: Tweet, completion: (tweet: Tweet?, error: NSError?) -> Void) {

@@ -104,13 +104,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/Models/Tweet.swift"
-            timestampString = "452490668.68802"
+            timestampString = "452495249.529499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "Tweet"
-            landmarkType = "3">
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "tweetsWithArray(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/Models/Tweet.swift"
-            timestampString = "452490668.68802"
+            timestampString = "452495249.529499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "Tweet"
             landmarkType = "3">
          </BreakpointContent>
@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/View Controllers/TweetsViewController.swift"
-            timestampString = "452397826.174734"
+            timestampString = "452494897.735835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/View Controllers/TweetsViewController.swift"
-            timestampString = "452397826.174734"
+            timestampString = "452494897.735835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -232,11 +232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/Models/Tweet.swift"
-            timestampString = "452490668.68802"
+            timestampString = "452495190.375402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "init(dictionary:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/TwitterClient.swift"
-            timestampString = "452490338.868558"
+            timestampString = "452496205.545585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "changeRetweetedStatus(onTweet:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/TwitterClient.swift"
-            timestampString = "452490338.868558"
+            timestampString = "452496205.545585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "changeRetweetedStatus(onTweet:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -328,11 +328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/Models/Tweet.swift"
-            timestampString = "452490668.68802"
+            timestampString = "452495190.375402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "init(dictionary:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -344,13 +344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/Models/Tweet.swift"
-            timestampString = "452490668.68802"
+            timestampString = "452495249.529499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "tweetsWithArray(_:)"
-            landmarkType = "5">
+            startingLineNumber = "70"
+            endingLineNumber = "70">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -376,13 +374,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/TwitterClient.swift"
-            timestampString = "452490551.750081"
+            timestampString = "452496205.545585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "changeRetweetedStatus(onTweet:completion:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Birder/TwitterClient.swift"
+            timestampString = "452496205.545585"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "changeRetweetedStatus(onTweet:completion:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Birder.TwitterClient.changeRetweetedStatus (Birder.TwitterClient)(onTweet : Birder.Tweet, completion : (tweet : Swift.Optional&lt;Birder.Tweet&gt;, error : Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Birder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ragrait/CodePath/ios-birding/Birder/Birder/TwitterClient.swift"
+                  timestampString = "452496218.85229"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "1815">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Birder.TwitterClient.(changeRetweetedStatus (Birder.TwitterClient) -&gt; (onTweet : Birder.Tweet, completion : (tweet : Swift.Optional&lt;Birder.Tweet&gt;, error : Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Birder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ragrait/CodePath/ios-birding/Birder/Birder/TwitterClient.swift"
+                  timestampString = "452496218.852427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "430">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Birder/Models/Tweet.swift"
+            timestampString = "452495814.658241"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "Tweet"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

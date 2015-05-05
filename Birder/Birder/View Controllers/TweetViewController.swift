@@ -48,6 +48,9 @@ class TweetViewController: UIViewController {
     }
     
     @IBAction func onReply(sender: AnyObject) {
+        if let tweet = tweet {
+            
+        }
     }
 
     @IBAction func onRetweet(sender: AnyObject) {
@@ -80,7 +83,6 @@ class TweetViewController: UIViewController {
             })
         }
     }
-    
     
     @IBAction func onFavorite(sender: AnyObject) {
         if let tweet = tweet {
