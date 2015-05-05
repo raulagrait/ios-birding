@@ -9,6 +9,7 @@
 import UIKit
 
 let newTweetNotification = "newTweetNotification"
+let replyToTweetNotification = "replyToTweetNotification"
 
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -24,6 +25,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
  
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onNewTweet:", name: newTweetNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onReplyToTweet:", name: replyToTweetNotification, object: nil)
         
         initTableView()
         initRefreshControl()
@@ -69,15 +71,23 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func onReplyToTweet(notification: NSNotification) {
+        if let userInfo = notification.userInfo, tweet = userInfo["tweet"] as? Tweet {
+            
+        }
+    }
+    
     // MARK: - UITableViewDataSource & UITableViewDelegate
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //var cell = TweetCell()
         var cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         cell.accessoryType = UITableViewCellAccessoryType.None
-        
+
         if let tweets = tweets {
             var tweetModel = tweets[indexPath.row]
+            cell.tweet = tweetModel
+            
             cell.tweetTextLabel.text = tweetModel.text
             cell.timeLabel.text = tweetModel.dateShortForm
         
@@ -133,6 +143,5 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 tweetViewController.tweet = tweet
             }
         }
-        
     }
 }
