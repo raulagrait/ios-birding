@@ -42,7 +42,10 @@ class Tweet: NSObject {
         get {
             if let difference = createdAt?.timeIntervalSinceNow {
                 var secondsDifference = (difference as Double) * -1.0
-                if secondsDifference < 60 * 60 {
+                if secondsDifference < 60 {
+                    let seconds = Int(ceil(secondsDifference))
+                    return "\(seconds)s"
+                } else if secondsDifference < 60 * 60 {
                     let minutes = Int(secondsDifference / 60.0)
                     return "\(minutes)m"
                 } else if secondsDifference < 60 * 60 * 24 {

@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/Models/Tweet.swift"
-            timestampString = "452495249.529499"
+            timestampString = "452498476.033266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "tweetsWithArray(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/Models/Tweet.swift"
-            timestampString = "452495249.529499"
+            timestampString = "452498476.033266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "Tweet"
             landmarkType = "3">
          </BreakpointContent>
@@ -344,11 +344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Birder/Models/Tweet.swift"
-            timestampString = "452495249.529499"
+            timestampString = "452498476.033266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70">
+            startingLineNumber = "73"
+            endingLineNumber = "73">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -406,7 +406,7 @@
                   moduleName = "Birder"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ragrait/CodePath/ios-birding/Birder/Birder/TwitterClient.swift"
-                  timestampString = "452498208.471361"
+                  timestampString = "452498605.415094"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
@@ -421,7 +421,7 @@
                   moduleName = "Birder"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ragrait/CodePath/ios-birding/Birder/Birder/TwitterClient.swift"
-                  timestampString = "452498208.471945"
+                  timestampString = "452498605.41656"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
