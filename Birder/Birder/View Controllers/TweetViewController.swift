@@ -56,7 +56,7 @@ class TweetViewController: UIViewController {
     
     @IBAction func onFavorite(sender: AnyObject) {
         if let tweet = tweet {
-            TwitterClient.sharedInstance.favoriteTweet(tweet, completion: { (tweet, error) -> Void in
+            TwitterClient.sharedInstance.changeFavoriteStatus(onTweet: tweet, completion: { (tweet, error) -> Void in
                 if error == nil {
                     self.updateControls()
                 }
