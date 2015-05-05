@@ -37,9 +37,8 @@ class TweetViewController: UIViewController {
             var dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy hh:mm:ss a"
             createdAtLabel.text = dateFormatter.stringFromDate(tweet.createdAt!)
-            
-            favoriteButton.selected = tweet.favorited!
-            retweetButton.selected = tweet.retweeted!
+
+            updateControls()
         }
     }
 
@@ -56,7 +55,20 @@ class TweetViewController: UIViewController {
     
     
     @IBAction func onFavorite(sender: AnyObject) {
-        
+        if let tweet = tweet {
+            TwitterClient.sharedInstance.favoriteTweet(tweet, completion: { (tweet, error) -> Void in
+                if error == nil {
+                    self.updateControls()
+                }
+            })
+        }
+    }
+    
+    func updateControls() {
+        if let tweet = tweet {
+            favoriteButton.selected = tweet.favorited!
+            retweetButton.selected = tweet.retweeted!
+        }
     }
     
     /*

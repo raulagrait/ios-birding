@@ -56,7 +56,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         var params = NSMutableDictionary()
         params["status"] = text
         
-        self.POST("1.1/statuses/update.json", parameters: params,
+        POST("1.1/statuses/update.json", parameters: params,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
                 
                 var tweet: Tweet? = nil
@@ -72,6 +72,21 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                 completion(tweet: nil, error: error)
         })
         
+    }
+    
+    func favoriteTweet(tweet: Tweet, completion: (tweet: Tweet?, error: NSError?) -> Void) {
+        var params = NSMutableDictionary()
+        params["id"] = NSNumber(longLong: tweet.id)
+        
+        POST("1.1/favorites/create.json", parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+                println("success favoriting tweet")
+                tweet.favorited = true
+                completion(tweet: tweet, error: nil)
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println("error favoriting tweet")
+                completion(tweet: tweet, error: error)
+        })
     }
     
     func openUrl(url: NSURL) {
