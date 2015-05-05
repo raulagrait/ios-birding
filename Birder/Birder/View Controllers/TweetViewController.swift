@@ -51,6 +51,34 @@ class TweetViewController: UIViewController {
     }
 
     @IBAction func onRetweet(sender: AnyObject) {
+        if let tweet = tweet {
+            if !(tweet.retweeted!) {
+                var alert = UIAlertController(title: "Retweet", message: "Retweet to your followers?", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Retweet", style: UIAlertActionStyle.Default, handler: onRetweetAlertAction))
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: onRetweetAlertAction))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            } else {
+                changeRetweetedStatus()
+            }
+        }
+    }
+    
+    func onRetweetAlertAction(action: UIAlertAction!) {
+        if action.style == UIAlertActionStyle.Default {
+            changeRetweetedStatus()
+        }
+    }
+    
+    func changeRetweetedStatus() {
+        if let tweet = tweet {
+            TwitterClient.sharedInstance.changeRetweetedStatus(onTweet: tweet, completion: { (tweet, error) -> Void in
+                if error == nil {
+                    self.tweet = tweet
+                    self.updateControls()
+                }
+            })
+        }
     }
     
     

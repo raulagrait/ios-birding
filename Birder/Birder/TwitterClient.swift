@@ -43,6 +43,8 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         GET("1.1/statuses/home_timeline.json", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) -> Void in
 
+            println(responseObject)
+            
             var tweets = Tweet.tweetsWithArray(responseObject as! [NSDictionary])            
             completion(tweets: tweets, error: nil)
             
@@ -86,6 +88,27 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                 completion(tweet: tweet, error: nil)
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 println("error changing favorite status of tweet")
+                completion(tweet: tweet, error: error)
+        })
+        
+    }
+    
+    func changeRetweetedStatus(onTweet tweet: Tweet, completion: (tweet: Tweet?, error: NSError?) -> Void) {
+        var params = NSMutableDictionary()
+        params["id"] = NSNumber(longLong: tweet.id)
+        
+        let action = tweet.retweeted! ? "destroy" : "retweet"
+        let id = tweet.id
+        var url = "1.1/statuses/\(action)/\(id).json"
+        
+        POST(url, parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+                println(responseObject)
+                println("success changing retweet status of tweet")
+                tweet.retweeted = !(tweet.retweeted!)
+                completion(tweet: tweet, error: nil)
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println("error changing retweet status of tweet")
                 completion(tweet: tweet, error: error)
         })
         

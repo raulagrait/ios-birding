@@ -112,7 +112,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func load(callback: (() -> Void) = {}) {
         
-        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in
+        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> Void in            
             self.tweets = tweets
             self.tableView.reloadData()
             callback()
