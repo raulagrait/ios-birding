@@ -43,8 +43,6 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         GET("1.1/statuses/home_timeline.json", parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) -> Void in
 
-            println(responseObject)
-            
             var tweets = Tweet.tweetsWithArray(responseObject as! [NSDictionary])            
             completion(tweets: tweets, error: nil)
             
@@ -60,10 +58,10 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         postStatusUpdateWithParameters(params, completion: completion)
     }
     
-    func replyToTweet(tweet: Tweet, text: String, completion: (tweet: Tweet?, error: NSError?) -> Void) {
+    func replyToTweet(withId: Int64, text: String, completion: (tweet: Tweet?, error: NSError?) -> Void) {
         var params = NSMutableDictionary()
         params["status"] = text
-        params["in_reply_to_status_id"] = NSNumber(longLong: tweet.id)
+        params["in_reply_to_status_id"] = NSNumber(longLong: withId)
         postStatusUpdateWithParameters(params, completion: completion)
     }
     

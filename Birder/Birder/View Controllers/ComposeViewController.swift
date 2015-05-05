@@ -16,11 +16,14 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     
+    var replyId: Int64?
+    var initialText: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tweetTextView.text = ""
+        tweetTextView.text = initialText != nil ? initialText! : ""
         tweetTextView.becomeFirstResponder()
         
         if let user = User.currentUser {
@@ -42,16 +45,22 @@ class ComposeViewController: UIViewController {
     
     @IBAction func onTweet(sender: AnyObject) {
         var text = tweetTextView.text
-        TwitterClient.sharedInstance.postStatusUpdate(text, completion: { (tweet: Tweet?, error: NSError?) -> Void in
-            if error == nil {
-                var userInfo = [NSObject: AnyObject]()
-                userInfo["tweet"] = tweet
-                NSNotificationCenter.defaultCenter().postNotificationName(newTweetNotification, object: self, userInfo: userInfo)
-                self.closeModal()
-            } else {
-                // Show an alert or something
-            }
-        })
+        if replyId == nil {
+            TwitterClient.sharedInstance.postStatusUpdate(text, completion: onTweetCompletion)
+        } else {
+            TwitterClient.sharedInstance.replyToTweet(replyId!, text: text, completion: onTweetCompletion)
+        }
+    }
+    
+    func onTweetCompletion(tweet: Tweet?, error: NSError?) {
+        if error == nil {
+            var userInfo = [NSObject: AnyObject]()
+            userInfo["tweet"] = tweet
+            NSNotificationCenter.defaultCenter().postNotificationName(newTweetNotification, object: self, userInfo: userInfo)
+            self.closeModal()
+        } else {
+            // Show an alert or something
+        }
     }
     
     func closeModal() {

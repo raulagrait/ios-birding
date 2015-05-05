@@ -315,6 +315,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onReply:" destination="dxc-0q-eis" eventType="touchUpInside" id="bKT-UP-GEk"/>
+                                    <segue destination="JxP-pi-pFo" kind="modal" id="KSu-bU-cdx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKp-Er-ort">
@@ -394,4 +395,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="KSu-bU-cdx"/>
+    </inferredMetricsTieBreakers>
 </document>
