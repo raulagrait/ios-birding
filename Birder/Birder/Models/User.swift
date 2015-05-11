@@ -40,16 +40,30 @@ class User: NSObject {
     var name: String?
     var screenName: String?
     var profileImageUrlString: String?
+    var profileBannerUrlString: String?
+    var profileBackgroundImageUrlString: String?
     var tagline: String?
     var dictionary: NSDictionary
+    
+    var backgroundImageUrlString: String? {
+        get {
+            var urlString = self.profileBannerUrlString != nil ? self.profileBannerUrlString : self.profileBackgroundImageUrlString
+            return urlString
+        }
+    }
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
         
+        println(dictionary)
+        
         name = dictionary["name"] as? String
         screenName = dictionary["screen_name"] as? String
         profileImageUrlString = dictionary["profile_image_url"] as? String
-        tagline = dictionary["description" ] as? String  
+        profileBannerUrlString = dictionary["profile_banner_url"] as? String
+        profileBackgroundImageUrlString = dictionary["profile_background_image_url"] as? String
+        
+        tagline = dictionary["description"] as? String
     }
     
     func logout() {

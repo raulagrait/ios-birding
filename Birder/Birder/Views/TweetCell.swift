@@ -30,6 +30,11 @@ class TweetCell: UITableViewCell {
         super.awakeFromNib()
         userImageView.layer.cornerRadius = 3
         userImageView.clipsToBounds = true
+        
+        
+        var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "onImageTouched")
+        userImageView.addGestureRecognizer(tapGestureRecognizer)
+        userImageView.userInteractionEnabled = true
 
         self.contentView.layoutIfNeeded()
         updatePreferredMaxLayoutWidths()
@@ -103,5 +108,11 @@ class TweetCell: UITableViewCell {
             favoriteButton.selected = tweet.favorited!
             retweetButton.selected = tweet.retweeted!
         }
+    }
+    
+    func onImageTouched() {
+        var userInfo = [NSObject: AnyObject]()
+        userInfo["tweet"] = tweet
+        NSNotificationCenter.defaultCenter().postNotificationName(navigateToUserNotification, object: self, userInfo: userInfo)
     }
 }

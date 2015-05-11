@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55B8450D1B01594300AC20EF /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B8450C1B01594300AC20EF /* UserViewController.swift */; };
 		55D143101AF3277700BD4A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1430F1AF3277700BD4A23 /* AppDelegate.swift */; };
 		55D143151AF3277700BD4A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D143131AF3277700BD4A23 /* Main.storyboard */; };
 		55D143171AF3277700BD4A23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D143161AF3277700BD4A23 /* Images.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55B8450C1B01594300AC20EF /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		55D1430A1AF3277700BD4A23 /* Birder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D1430E1AF3277700BD4A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55D1430F1AF3277700BD4A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				55D1433C1AF589F700BD4A23 /* TweetsViewController.swift */,
 				55D143411AF67E2F00BD4A23 /* ComposeViewController.swift */,
 				55D143431AF6FD7E00BD4A23 /* TweetViewController.swift */,
+				55B8450C1B01594300AC20EF /* UserViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55D143341AF329B700BD4A23 /* LoginViewController.swift in Sources */,
+				55B8450D1B01594300AC20EF /* UserViewController.swift in Sources */,
 				55D143401AF59C8E00BD4A23 /* TweetCell.swift in Sources */,
 				55D143441AF6FD7E00BD4A23 /* TweetViewController.swift in Sources */,
 				55D143361AF32A6500BD4A23 /* TwitterClient.swift in Sources */,

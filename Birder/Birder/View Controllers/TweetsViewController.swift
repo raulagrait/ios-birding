@@ -10,6 +10,7 @@ import UIKit
 
 let newTweetNotification = "newTweetNotification"
 let replyToTweetNotification = "replyToTweetNotification"
+let navigateToUserNotification = "navigateToUserNotification"
 
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -26,6 +27,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
  
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onNewTweet:", name: newTweetNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onReplyToTweet:", name: replyToTweetNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onNavigateToUser:", name: navigateToUserNotification, object: nil)
         
         initTableView()
         initRefreshControl()
@@ -74,6 +76,17 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func onReplyToTweet(notification: NSNotification) {
         if let userInfo = notification.userInfo, tweet = userInfo["tweet"] as? Tweet {
             
+        }
+    }
+    
+    func onNavigateToUser(notification: NSNotification) {
+        if let userInfo = notification.userInfo, tweet = userInfo["tweet"] as? Tweet {
+            
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let userViewController = storyboard.instantiateViewControllerWithIdentifier("UserViewController") as? UserViewController {
+                userViewController.user = tweet.user
+                navigationController?.pushViewController(userViewController, animated: true)
+            }
         }
     }
     
