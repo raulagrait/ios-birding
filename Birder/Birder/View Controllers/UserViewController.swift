@@ -21,6 +21,9 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var followersCountLabel: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var screenNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +51,9 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let statusesCount = user.statusesCount {
                 tweetCountLabel.text = "\(statusesCount)"
             }
+            
+            nameLabel.text = user.name
+            screenNameLabel.text = user.screenName
         }
 
         initTableView()
