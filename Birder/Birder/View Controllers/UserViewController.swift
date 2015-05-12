@@ -53,7 +53,10 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             nameLabel.text = user.name
-            screenNameLabel.text = user.screenName
+            
+            if let screenName = user.screenName {
+                screenNameLabel.text = "@" + screenName
+            }
         }
 
         initTableView()
