@@ -44,6 +44,9 @@ class User: NSObject {
     var profileBackgroundImageUrlString: String?
     var tagline: String?
     var dictionary: NSDictionary
+    var followersCount: Int?
+    var followingCount: Int?
+    var statusesCount: Int?
     
     var backgroundImageUrlString: String? {
         get {
@@ -60,6 +63,10 @@ class User: NSObject {
         profileImageUrlString = dictionary["profile_image_url"] as? String
         profileBannerUrlString = dictionary["profile_banner_url"] as? String
         profileBackgroundImageUrlString = dictionary["profile_background_image_url"] as? String
+        
+        followersCount = dictionary["followers_count"] as? Int
+        followingCount = dictionary["following_count"] as? Int
+        statusesCount = dictionary["statuses_count"] as? Int
         
         tagline = dictionary["description"] as? String
     }

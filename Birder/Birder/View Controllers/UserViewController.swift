@@ -17,6 +17,10 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tweetCountLabel: UILabel!
+    @IBOutlet weak var followingCountLabel: UILabel!
+    @IBOutlet weak var followersCountLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +28,25 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let user = user {
             
             if let backgroundImageUrlString = user.backgroundImageUrlString {
-
                 let backgroundUrl = NSURL(string: backgroundImageUrlString)
                 headerBackgroundImageView.setImageWithURL(backgroundUrl)
-                
             }
             
             if let profileImageUrlString = user.profileImageUrlString {
                 let profileUrl = NSURL(string: profileImageUrlString)
                 profileImageView.setImageWithURL(profileUrl)
+            }
+            
+            if let followersCount = user.followersCount {
+                followersCountLabel.text = "\(followersCount)"
+            }
+            
+            if let followingCount = user.followingCount {
+                followingCountLabel.text = "\(followingCount)"
+            }
+            
+            if let statusesCount = user.statusesCount {
+                tweetCountLabel.text = "\(statusesCount)"
             }
         }
 
