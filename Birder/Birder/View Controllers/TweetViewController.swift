@@ -37,6 +37,10 @@ class TweetViewController: UIViewController {
             var dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy hh:mm:ss a"
             createdAtLabel.text = dateFormatter.stringFromDate(tweet.createdAt!)
+            
+            var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "onImageTouched")
+            userImageView.addGestureRecognizer(tapGestureRecognizer)
+            userImageView.userInteractionEnabled = true
 
             updateControls()
         }
@@ -99,6 +103,12 @@ class TweetViewController: UIViewController {
             favoriteButton.selected = tweet.favorited!
             retweetButton.selected = tweet.retweeted!
         }
+    }
+    
+    func onImageTouched() {
+        var userInfo = [NSObject: AnyObject]()
+        userInfo["tweet"] = tweet
+        NSNotificationCenter.defaultCenter().postNotificationName(navigateToUserNotification, object: self, userInfo: userInfo)
     }
     
     // MARK: - Navigation

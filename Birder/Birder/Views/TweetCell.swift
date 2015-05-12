@@ -31,7 +31,6 @@ class TweetCell: UITableViewCell {
         userImageView.layer.cornerRadius = 3
         userImageView.clipsToBounds = true
         
-        
         var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "onImageTouched")
         userImageView.addGestureRecognizer(tapGestureRecognizer)
         userImageView.userInteractionEnabled = true
