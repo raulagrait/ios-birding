@@ -327,6 +327,7 @@
                     <connections>
                         <outlet property="headerBackgroundImageView" destination="Gpn-BD-Jdg" id="o9j-Bf-ys4"/>
                         <outlet property="profileImageView" destination="OP5-NT-YvN" id="c3a-OL-ERh"/>
+                        <outlet property="tableView" destination="hzn-5W-vdc" id="yes-6Z-7xG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnC-qG-xLS" userLabel="First Responder" sceneMemberID="firstResponder"/>

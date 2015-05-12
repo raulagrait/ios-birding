@@ -35,7 +35,6 @@ class Tweet: NSObject {
         
         favorited = dictionary["favorited"] as? Bool
         retweeted = dictionary["retweeted"] as? Bool
-        println("\(text) favorited = \(favorited) \(retweeted)")
     }
     
     var dateShortForm: String {

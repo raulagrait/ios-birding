@@ -54,9 +54,7 @@ class User: NSObject {
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
-        
-        println(dictionary)
-        
+
         name = dictionary["name"] as? String
         screenName = dictionary["screen_name"] as? String
         profileImageUrlString = dictionary["profile_image_url"] as? String

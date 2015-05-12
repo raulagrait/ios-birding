@@ -39,15 +39,24 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     }
     
     func homeTimelineWithParams(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> Void) {
-
-        GET("1.1/statuses/home_timeline.json", parameters: params, success: { (operation: AFHTTPRequestOperation!,
+        let urlString = "1.1/statuses/home_timeline.json"
+        timelineWithParams(params, urlString: urlString, completion: completion)
+    }
+    
+    func userTimelineWithParams(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> Void) {
+        let urlString = "1.1/statuses/user_timeline.json"
+        timelineWithParams(params, urlString: urlString, completion: completion)
+    }
+    
+    func timelineWithParams(params: NSDictionary?, urlString: String, completion: (tweets: [Tweet]?, error: NSError?) -> Void) {
+        GET(urlString, parameters: params, success: { (operation: AFHTTPRequestOperation!,
             responseObject: AnyObject!) -> Void in
-
-            var tweets = Tweet.tweetsWithArray(responseObject as! [NSDictionary])            
+            
+            var tweets = Tweet.tweetsWithArray(responseObject as! [NSDictionary])
             completion(tweets: tweets, error: nil)
             
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-                println("failed getting home timeline")
+                println("failed getting timeline")
                 completion(tweets: nil, error: error)
         })
     }
@@ -110,7 +119,6 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         
         POST(url, parameters: params,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                println(responseObject)
                 println("success changing retweet status of tweet")
                 tweet.retweeted = !(tweet.retweeted!)
                 completion(tweet: tweet, error: nil)
