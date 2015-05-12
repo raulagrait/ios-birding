@@ -2,11 +2,14 @@
 
 This is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: `15 hours`
+Time spent: v1 `15 hours`
+Time spent: v2 `5 hours`
 
 ### Features
 
 #### Required
+
+#### v1
 
 - [x] User can sign in using OAuth login flow
 - [x] User can view last 20 tweets from their home timeline
@@ -17,6 +20,7 @@ Time spent: `15 hours`
 - [x] User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
 - [x] User can retweet, favorite, and reply to the tweet directly from the timeline feed.
 
+
 #### Optional
 
 - [ ] When composing, you should have a countdown in the upper right for the tweet limit.
@@ -26,6 +30,40 @@ Time spent: `15 hours`
 - [ ] Replies should be prefixed with the username and the reply_id should be set when posting the tweet,
 - [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
 
+###v2
+
+#### Hamburger Menu
+
+- [ ] Dragging anywhere in the view should reveal the menu.
+- [ ] The menu should include links to your profile, the home timeline, and the mentions view.
+- [ ] The menu can look similar to the LinkedIn menu below or feel free to take liberty with the UI.
+
+#### Profile page
+
+- [x] Contains the user header view
+- [x] Contains a section with the users basic stats: # tweets, # following, # followers
+- [ ] Optional: Implement the paging view for the user description.
+- [ ] Optional: As the paging view moves, increase the opacity of the background screen. See the actual Twitter app for this effect
+- [ ] Optional: Pulling down the profile page should blur and resize the header image.
+
+#### Home Timeline
+
+- [x] Tapping on a user image should bring up that user's profile page
+
+
+#### Optional: Account switching
+- [ ] Long press on tab bar to bring up Account view with animation
+- [ ] Tap account to switch to
+- [ ] Include a plus button to Add an Account
+- [ ] Swipe to delete an account
+
+
 ### Walkthrough
 
+#### v1
+
 ![Video Walkthrough](birder.gif)
+
+#### v2
+
+![Video Walkthrough](birderV2.gif)
