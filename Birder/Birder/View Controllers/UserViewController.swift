@@ -30,6 +30,11 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         if let user = user {
             
+            let numberFormatter = NSNumberFormatter()
+            numberFormatter.locale = NSLocale.currentLocale()
+            numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+            numberFormatter.usesGroupingSeparator = true
+
             if let backgroundImageUrlString = user.backgroundImageUrlString {
                 let backgroundUrl = NSURL(string: backgroundImageUrlString)
                 headerBackgroundImageView.setImageWithURL(backgroundUrl)
@@ -41,15 +46,18 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             if let followersCount = user.followersCount {
-                followersCountLabel.text = "\(followersCount)"
+                let formattedNumber = numberFormatter.stringFromNumber(NSNumber(integer: followersCount))
+                followersCountLabel.text = formattedNumber
             }
             
             if let followingCount = user.followingCount {
-                followingCountLabel.text = "\(followingCount)"
+                let formattedNumber = numberFormatter.stringFromNumber(NSNumber(integer: followingCount))
+                followingCountLabel.text = formattedNumber
             }
             
             if let statusesCount = user.statusesCount {
-                tweetCountLabel.text = "\(statusesCount)"
+                let formattedNumber = numberFormatter.stringFromNumber(NSNumber(integer: statusesCount))
+                tweetCountLabel.text = formattedNumber
             }
             
             nameLabel.text = user.name

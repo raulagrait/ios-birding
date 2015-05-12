@@ -65,7 +65,7 @@ class User: NSObject {
         profileBackgroundImageUrlString = dictionary["profile_background_image_url"] as? String
         
         followersCount = dictionary["followers_count"] as? Int
-        followingCount = dictionary["following_count"] as? Int
+        followingCount = dictionary["friends_count"] as? Int
         statusesCount = dictionary["statuses_count"] as? Int
         
         tagline = dictionary["description"] as? String

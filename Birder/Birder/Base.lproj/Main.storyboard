@@ -292,6 +292,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gpn-BD-Jdg">
                                 <rect key="frame" x="0.0" y="64" width="320" height="151"/>
+                                <color key="backgroundColor" red="0.47374131940000003" green="0.47374131940000003" blue="0.47374131940000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="151" id="hOL-9D-ZUt"/>
                                 </constraints>
@@ -330,7 +331,7 @@
                                             <constraint firstAttribute="width" constant="74" id="1LE-3d-3ao"/>
                                             <constraint firstAttribute="height" constant="21" id="BlC-sv-w8a"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -350,7 +351,7 @@
                                             <constraint firstAttribute="height" constant="21" id="Iv8-qe-aNa"/>
                                             <constraint firstAttribute="width" constant="74" id="uI5-qw-6JT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -360,7 +361,7 @@
                                             <constraint firstAttribute="width" constant="74" id="GJd-3B-LVb"/>
                                             <constraint firstAttribute="height" constant="21" id="LiU-f8-mcD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
