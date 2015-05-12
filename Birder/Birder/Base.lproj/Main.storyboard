@@ -595,6 +595,46 @@
             </objects>
             <point key="canvasLocation" x="610" y="403"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="Qij-db-PgW">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" id="QR4-hf-UpI" customClass="MenuViewController" customModule="Birder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6SR-0R-Zaf"/>
+                        <viewControllerLayoutGuide type="bottom" id="JWN-PP-7ht"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s2T-ZX-flY" customClass="Menu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51B-mr-8cz">
+                                <rect key="frame" x="16" y="60" width="88" height="30"/>
+                                <state key="normal" title="Profile Name">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXd-kq-vnd">
+                                <rect key="frame" x="16" y="98" width="103" height="30"/>
+                                <state key="normal" title="Home Timeline">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onHomeTimeline:" destination="QR4-hf-UpI" eventType="touchUpInside" id="Km9-bi-aC5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileButton" destination="51B-mr-8cz" id="BDB-LU-qQF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uqz-dF-1eV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="598" y="1067"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dDV-vo-qFI">
             <objects>

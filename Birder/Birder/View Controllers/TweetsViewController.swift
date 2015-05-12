@@ -11,6 +11,8 @@ import UIKit
 let newTweetNotification = "newTweetNotification"
 let replyToTweetNotification = "replyToTweetNotification"
 let navigateToUserNotification = "navigateToUserNotification"
+let navigateToCurrentUserNotification = "navigateToCurrentUserNotification"
+let navigateToHomeTimelineNotification = "navigateToHomeTimeline"
 
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -28,11 +30,19 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onNewTweet:", name: newTweetNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onReplyToTweet:", name: replyToTweetNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onNavigateToUser:", name: navigateToUserNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onNavigateToCurrentUser:", name: navigateToCurrentUserNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onNavigateToHomeTimeline:", name: navigateToHomeTimelineNotification, object: nil)
         
         initTableView()
         initRefreshControl()
         
-        load()
+        load(callback: animateMenu)
+    }
+    
+    func animateMenu() {
+        
+        var destination = self.view.frame
+        destination.origin.x += 26
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,12 +91,24 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func onNavigateToUser(notification: NSNotification) {
         if let userInfo = notification.userInfo, tweet = userInfo["tweet"] as? Tweet {
-            
-            var storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let userViewController = storyboard.instantiateViewControllerWithIdentifier("UserViewController") as? UserViewController {
-                userViewController.user = tweet.user
-                navigationController?.pushViewController(userViewController, animated: true)
-            }
+            navigateToUser(tweet.user)
+        }
+    }
+    
+    func onNavigateToCurrentUser(notification: NSNotification) {
+        var currentUser = User.currentUser
+        navigateToUser(currentUser)
+    }
+    
+    func onNavigateToHomeTimeline(notification: NSNotification) {
+        navigationController?.popToRootViewControllerAnimated(false)
+    }
+    
+    func navigateToUser(user: User?) {
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let userViewController = storyboard.instantiateViewControllerWithIdentifier("UserViewController") as? UserViewController {
+            userViewController.user = user
+            navigationController?.pushViewController(userViewController, animated: true)
         }
     }
     

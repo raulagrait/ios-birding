@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    var menuViewController: UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -24,9 +26,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             println("Current user detected: \(currentUser.name)")
             var vc = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController") as! UIViewController
             window?.rootViewController = vc
+            
+            if let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as? UIViewController {
+                self.menuViewController = menuViewController
+                window?.insertSubview(menuViewController.view, belowSubview: vc.view)
+                
+                var gestureRecognizer = UIPanGestureRecognizer(target: self, action: "onLeftPan:")
+                vc.view.addGestureRecognizer(gestureRecognizer)
+            }
         }
         
         return true
+    }
+    
+    var mainViewLeft: CGFloat = 0.0
+    var maxNavWidth: CGFloat = 200.0
+    
+    func onLeftPan(recognizer: UIPanGestureRecognizer) {
+        if let viewController = window?.rootViewController, view = viewController.view {
+            var x = recognizer.locationInView(view)
+            var velocity = recognizer.velocityInView(view)
+            mainViewLeft = view.frame.minX
+            
+            var point = recognizer.translationInView(view)
+            var left = mainViewLeft + point.x
+            left = min(left, maxNavWidth)
+            left = max(0, left)
+            
+            view.frame.origin.x = left
+            
+            if recognizer.state == .Ended || recognizer.state == .Cancelled {
+                var finalX = left > maxNavWidth / 2.0 ? maxNavWidth : 0
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
+                    view.frame.origin.x = finalX
+                })
+            }
+        }
+    }
+    
+    func closeLeftNav() {
+        var finalX = 0.0
+        if let viewController = window?.rootViewController, view = viewController.view {
+            //UIView.animateWithDuration(0.5, animations: { () -> Void in
+                view.frame.origin.x = 0
+            //})
+        }
     }
     
     func userDidLogout() {
