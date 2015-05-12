@@ -37,7 +37,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
 
         initTableView()
-        //load()
+        load()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +46,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("UserTweetCell", forIndexPath: indexPath) as! TweetCell
         cell.accessoryType = UITableViewCellAccessoryType.None
         
         if let tweets = tweets {
@@ -94,7 +94,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func initTableView() {
         
-        tableView.registerClass(TweetCell.self, forCellReuseIdentifier: "TweetCell")
+        //tableView.registerClass(TweetCell.self, forCellReuseIdentifier: "UserTweetCell")
         
         tableView.delegate = self
         tableView.dataSource = self
